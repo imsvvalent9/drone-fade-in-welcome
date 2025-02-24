@@ -1,7 +1,6 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import droneGif from "../assets/drone.gif";
 
 const Index = () => {
   const [isIntro, setIsIntro] = useState(true);
@@ -9,7 +8,7 @@ const Index = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsIntro(false);
-    }, 3000); // Ajusta este tiempo según la duración de tu GIF
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -25,16 +24,14 @@ const Index = () => {
             transition={{ duration: 1 }}
             className="flex items-center justify-center min-h-screen"
           >
-            <motion.img
-              src={droneGif}
-              alt="Drone Animation"
+            <motion.div
               initial={{ scale: 0.5, y: 100 }}
               animate={{ scale: 1, y: 0 }}
               transition={{
                 duration: 2,
                 ease: "easeOut"
               }}
-              className="w-64 h-64 object-contain"
+              className="w-64 h-64 bg-white rounded-full"
             />
           </motion.div>
         ) : (
