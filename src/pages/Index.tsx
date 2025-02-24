@@ -8,7 +8,7 @@ const Index = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsIntro(false);
-    }, 3000);
+    }, 4000); // Ajustamos el tiempo para que coincida con la duración del video
 
     return () => clearTimeout(timer);
   }, []);
@@ -22,16 +22,14 @@ const Index = () => {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
-            className="flex items-center justify-center min-h-screen"
+            className="flex items-center justify-center min-h-screen relative"
           >
-            <motion.div
-              initial={{ scale: 0.5, y: 100 }}
-              animate={{ scale: 1, y: 0 }}
-              transition={{
-                duration: 2,
-                ease: "easeOut"
-              }}
-              className="w-64 h-64 bg-white rounded-full"
+            <video
+              autoPlay
+              muted
+              playsInline
+              className="w-full h-full object-cover absolute inset-0"
+              src="/animacion dron pantalla  carga.mp4"
             />
           </motion.div>
         ) : (
