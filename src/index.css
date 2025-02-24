@@ -96,6 +96,23 @@
   }
 
   body {
+    @apply bg-background text-foreground antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Añadimos una transición suave para todos los elementos */
+  * {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+/* Resto del CSS existente */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
     @apply bg-background text-foreground;
   }
 }
